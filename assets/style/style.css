@@ -13,3 +13,13 @@
 label {
   display: block;
 }
+
+.house-img {
+  height: 12.5rem;
+  max-width: 100%;
+}
+
+.listor-img {
+  width: 11rem;
+  height: 9rem;
+}
