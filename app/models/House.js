@@ -1,3 +1,4 @@
+import {generateId} from '../utils/GenerateId.js';
 import {Profile} from './Profile.js';
 
 export class House {
@@ -9,21 +10,14 @@ export class House {
     this.imgUrl = data.imgUrl;
     this.year = data.year;
     this.price = data.price;
-    this.description = data.description || '';
+    this.description = data.description;
     this.creatorId = data.creatorId;
-    this.creator = new Profile(data.creator);
+    this.creator = data.creator;
   }
 
   get houseCardTemplate() {
     return `<div class="col-md-3">
               <div class="card h-100">
-                <div class="d-flex flex-column align-items-center">
-                  <p>Lister: ${this.creator.name}</p>
-                  <img class="listor-img" src="${this.creator.picture}" alt="Listor" />
-                </div>
-
-                <hr>
-
                 <img class="house-img" src="${this.imgUrl}" alt="House" />
                 <div class="card-body text-center">
                   <h6>Year ${this.year}</h6>
